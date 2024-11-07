@@ -1,0 +1,157 @@
+/* Base Reset */
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* Main Container */
+.resume-container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Personal Info Section */
+.personal-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eceff1;
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 30%;
+    margin-right: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+h1 {
+    font-family: 'Merienda';
+    margin: 0;
+    font-size: 2.0em;
+    color: #2d3436;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #0984e3;
+    margin-bottom: 10px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Contact Info */
+.contact-info {
+    font-size: 1.1em;
+    color: #636e72;
+}
+
+/* Buttons */
+button {
+    background-color: #00b894;
+    color: #ffffff;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 25px 25px 25px 0px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #d63031;
+    transform: scale(1.1);
+}
+
+/* Section Style */
+.section {
+    margin-bottom: 10px;
+    padding: 1px 20px 1px 20px;
+    background: #f0f4f8;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul li {
+    background-color: #86c6f7;
+    opacity: 100%;
+    color: black;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 10px;
+    font-family: cursive;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+ul li:hover {
+    background-color: #00b894;
+}
+
+/* Paragraph Styles */
+p {
+    font-family: cursive;
+    color: #555;
+    font-size: 0.90em;
+    margin: 15px 0;
+}
+
+/* Hover Transition for Sections */
+.section:hover {
+    background-color: #eaf6ff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .personal-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+        margin: 0 0 20px 0;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+}

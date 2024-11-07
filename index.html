@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&family=Merienda:wght@300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="resume-container" id="resume">
+        <!-- Personal Info -->
+        <div class="personal-info">
+            <img src="./img/my profile1.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="contact-info">
+                <h1 id="name">Muhammad Fahad Khakwani</h1>
+                <p id="contact"><b>Email :</b> fahadyousufkhakwani@gmail.com | Mobile : <b>+92-312-9092620</b></p>
+                <p id="social-links">LinkedIn: <a href="https://www.linkedin.com/in/fahad-khakwani-3aa655265/"
+                        target="_main">Fahad Khakwani(linkedin.com)</a> | GitHub:<a
+                        href="https://github.com/Fahad-FullStackDeveloper"
+                        target="_main">Fahad-FullStackDeveloper(github.com)</a> </p>
+            </div>
+        </div>
+
+        <!-- Sections with Show/Hide Buttons -->
+        <div class="section">
+            <h2>Personal Information
+                <button onclick="toggleSection('personal-info-details')">Hide</button>
+            </h2>
+            <div id="personal-info-details">
+                <p><b>Date of Birth :</b> August 19, 1989</p>
+                <p><b>Address :</b> Kufa St, Karachi, Sindh-Pakistan</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Education
+                <button onclick="toggleSection('education-details')">Hide</button>
+            </h2>
+            <div id="education-details">
+                <p>GIAIC University at Governor House(2023-2025)</p>
+                <pre>(Deploma from the University of Karachi)</pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Programming Skills
+                <button onclick="toggleSection('skills-details')">Hide</button>
+            </h2>
+            <div id="skills-details">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS </li>
+                    <li>JavaScript | TypeScript</li>
+                    <li>Node JS</li>
+                    <li>React JS | Next JS</li>
+                    <li>Tailwind CSS</li>
+                    <li>Figma design</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Work Experience
+                <button onclick="toggleSection('work-details')">Hide</button>
+            </h2>
+            <div id="work-details">
+                <!-- Full-Stack Developer Experience -->
+                <h3>Full-Stack Developer, XYZ Solutions</h3>
+                <p>Sep 2022 - Present</p>
+                <ul>
+                    <li>Developed end-to-end web applications using Next.js, React.js, TypeScript for frontend, and
+                        Node.js, Next.js for backend services.</li>
+                    <li>Implemented RESTful APIs and integrated third-party services such as payment gateways and
+                        authentication systems.</li>
+                    <li>Leveraged Tailwind CSS for designing responsive and efficient user interfaces, improving user
+                        experience more by 40%.</li>
+                    <li>Optimized database queries and server performance, reducing API response time by 30%.</li>
+                    <li>Deployed and managed applications using cloud services like AWS and CI/CD pipelines for
+                        continuous deployment.</li>
+                </ul>
+
+                <!-- Freelancing Experience -->
+                <h3>Freelancing: Web & App Developer</h3>
+                <p>June 2022 - Currently Working</p>
+                <ul>
+                    <li>Worked on various freelance projects, building responsive, SEO-friendly websites for clients
+                        using HTML, CSS, JavaScript, and React.js.</li>
+                    <li>Collaborated with startups to develop custom web solutions, including e-commerce platforms,
+                        using Next.js and Node.js.</li>
+                    <li>Provided clients with scalable solutions, integrating Stripe for payments and social media
+                        logins with OAuth.</li>
+                    <li>Ensured cross-browser compatibility, high performance, and optimal SEO for client websites,
+                        resulting in improved search engine rankings.</li>
+                    <li>Consulted with clients on technical architecture, user experience design, and backend strategies
+                        for sustainable development.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export to PDF Button -->
+    <button onclick="exportToPDF()">Export to PDF</button>
+
+    <script src="app.js"></script>
+    <script>
+        // Function to toggle the visibility of sections
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.style.display = section.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Function to export the resume to PDF
+        function exportToPDF() {
+            const resumeElement = document.getElementById('resume');
+            const options = {
+                margin: 0.25,
+                filename: 'resume.pdf',
+                image: { type: 'jpeg', quality: 1.00 },
+                html2canvas: { scale: 3 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().from(resumeElement).set(options).save();
+        }
+    </script>
+</body>
+
+</html>
